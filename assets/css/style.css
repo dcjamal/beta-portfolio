@@ -635,7 +635,7 @@ header.sticky {
 .sidr-class-dropdown-menu li a:hover,
 .sidr-class-menu-item-has-children.active > a,
 .main-navigation .dropdown-menu > li > a:hover { 
-    color: #f0780f;
+    color: #0078ac;
     text-decoration: none; 
 }
 
