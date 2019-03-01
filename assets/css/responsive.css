@@ -1,0 +1,84 @@
+
+
+/*------------------------------------------------------------------
+[# All Devices above 960px]
+-------------------------------------------------------------------*/
+
+@media only screen and (min-width: 959px) {
+    .col-6 {
+        float: left;
+    }
+}
+
+/*------------------------------------------------------------------
+[# All Devices under 960px]
+-------------------------------------------------------------------*/
+
+@media only screen and (max-width: 959px) {
+
+
+    /* Grid */
+
+    .col-6 {
+        width: 100%;
+    }
+
+    /* boxed */
+
+    #wrap {
+        overflow: hidden
+    }
+
+    /* content and sidebar */
+
+    .container { 
+        max-width: 95%; 
+    }
+
+
+    /* Header  */
+
+    #site-header-inner {
+        height: 100% !important;
+        padding-bottom: 15px !important;
+        padding-left: 5px!important;
+        padding-right:5px!important;
+        padding-top: 20px !important;
+        position: relative !important;
+    }
+
+    /* Header > Logo */
+    #site-logo .header-default-logo {
+        display: none;
+    }
+
+    /* Header > Navbar */
+
+    #site-navigation-wrap {
+        display: none
+    }
+
+    .dci-mobile-menu-toggle {
+        display: block
+    }
+
+
+}
+
+/*------------------------------------------------------------------
+[# All Devices under 760px]
+-------------------------------------------------------------------*/
+
+@media only screen and (max-width: 760px) {
+    .slider-title h2 {
+        font-size: 18px;
+    }
+
+    a.btn.btn-normal,
+    a.btn.btn-normal-border {
+        border-radius: 0px;
+        font-size: 16px;
+        padding: 6px 16px;
+
+    }
+}
