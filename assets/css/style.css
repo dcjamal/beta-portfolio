@@ -645,7 +645,7 @@ header.sticky {
 
 .sidr-class-dropdown-menu li a:hover .sidr-class-dropdown-toggle,
 .sidr-class-menu-item-has-children.active > a > .sidr-class-dropdown-toggle {
-    color: #0FBEF0;
+    color: #0078ac;
 }
 
 .sidr-class-close-sidr-menu {
