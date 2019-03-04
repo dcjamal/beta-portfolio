@@ -99,14 +99,14 @@ img {
 
 
 h2 {
-    font-size: 48px;
+    font-size: 3.000emx;
     line-height: normal;
     margin-bottom: 15px;
     text-transform: uppercase;
 }
 
 h3 {
-    font-size: 30px;
+    font-size: 1.875em;
     line-height: normal;
     margin-bottom: 15px;
     text-transform: uppercase;
@@ -221,6 +221,14 @@ body {
     line-height: 1.65;
 }
 
+body.dci-blockscroll { 
+    position:absolute; 
+    width:100%; 
+    overflow-y:hidden; 
+    top:0;
+    bottom:0; 
+}
+
 
 /*------------------------------------------------------------------
 [Typography]
@@ -228,7 +236,7 @@ body {
 
 p {
     line-height: 24px;
-    font-size: 14px;
+    font-size: 0.875em;
     font-weight: 400;
     color: #666;
     font-family: 'Lato', sans-serif;
@@ -271,7 +279,7 @@ h6 {
 .text-title h5 {
     position: relative;
     display: inline-block;
-    font-size: 30px;
+    font-size: 1.875em;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -331,7 +339,7 @@ textarea:focus {
     display: inline-block;
     padding: 6px 12px;
     margin-bottom: 0;
-    font-size: 14px;
+    font-size: 0.875em;
     font-weight: 400;
     line-height: 1.42857143;
     text-align: center;
@@ -366,7 +374,7 @@ a.btn.btn-color,
 a.btn.btn-normal-border,
 a.btn-service {
     border-radius: 0px;
-    font-size: 16px;
+    font-size: 1.000em;
     padding: 8px 20px;
 }
 
@@ -421,10 +429,15 @@ body.dci-responsive .container {
 [Header]
 -------------------------------------------------------------------*/
 
-header.sticky {
+#header-sticky-wrapper.is-sticky #site-header {
     position: fixed;
-    background-color: #000000b3;
-    z-index: 999;
+    overflow: visible !important;
+    z-index: 1001;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 5px #0000001a;
+    -moz-box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    box-shadow: 0 2px 5px #0000001a;
+    width: 100%;
     -webkit-transition: .5s;
     -moz-transition: .5s;
     -o-transition: .5s;
@@ -433,7 +446,7 @@ header.sticky {
 }
 
 
-#site-header.fixed-scroll { 
+#site-header.fixed-sticky { 
     transform: translateZ(0); 
     -moz-transform: translatez(0); 
     -ms-transform: translatez(0);
@@ -442,7 +455,7 @@ header.sticky {
     z-index: 99;
 }
 
-#site-header-sticky-wrapper.is-sticky #site-header {
+#header-sticky-wrapper.is-sticky #site-header {
     position:fixed;
     overflow:visible!important;
     z-index:999;
@@ -459,7 +472,7 @@ header.sticky {
     height: 100%;
 }
 
-#site-header-sticky-wrapper.is-sticky #site-header-inner {
+#header-sticky-wrapper.is-sticky #site-header-inner {
     z-index:999;
 }
 
@@ -483,18 +496,20 @@ header.sticky {
     text-decoration: none; 
 }
 
+#site-logo a:hover { 
+    text-decoration: none 
+}
+
 #site-logo a.site-logo-text { 
     color: #f1f1f1; 
-    font-size: 24px; 
+    font-size: 1.500em; 
     font-family: 'Shojumaru', arial, sans-serif;
     font-weight: bold;
 }
 
-#site-logo-fa-icon { margin-right: 10px; }
-#site-logo-fa-icon.fa-wpex-hidden { margin-right: 0; }
-#site-logo a:hover { text-decoration: none }
-#site-logo img { display: inline; vertical-align: middle; height: auto; width: auto; max-height: 100%; max-width: 100%; }
-
+.is-sticky #site-logo a.site-logo-text { 
+    color: #2b3f61;
+}
 
 /*------------------------------------------------------------------
 [Header One]
@@ -512,6 +527,15 @@ header.sticky {
     margin-top: -25px; 
     height: 50px;
 }
+
+.navbar-style .dropdown-menu > li.menu-item > a {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 4px;
+    color: #555;
+}
+
 
 .navbar-style .dropdown-menu > li > a > span.link-inner {
     display: inline-block;
@@ -549,8 +573,10 @@ header.sticky {
 -------------------------------------------------------------------*/
 
 #site-navigation a { 
-    text-decoration: none 
+    text-decoration: none;
+    font-size: 0.938em;
 }
+
 
 #site-navigation .dropdown-menu > li.menu-item > a:hover, 
 #site-navigation .dropdown-menu > li.menu-item.current-menu-item > a, 
@@ -561,6 +587,25 @@ header.sticky {
 /*------------------------------------------------------------------
 [Mobile Menu]
 -------------------------------------------------------------------*/
+
+#sidr-close {
+    display: none;
+}
+
+.sidr-class-dci-close {
+    text-align: right;
+    line-height: normal;
+    font-size: 2em;
+    color: #aaa;
+    font-weight: 700;
+}
+
+.sidr-class-dci-close a {
+    color: inherit;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
 
 #mobile-menu {
     background: #151616;
@@ -578,7 +623,7 @@ header.sticky {
     color: rgba(255, 255, 255, 0.8);
     display: block;
     float: left;
-    font-size: 18px;
+    font-size: 1.125em;
     height: 40px;
     line-height: 40px;
     margin-left: 10px;
@@ -595,7 +640,8 @@ header.sticky {
     position: fixed; top: 0; left: 0; height: 100%; width: 100%; background: rgba(0,0,0,0.6); z-index: 9999; }
 
 /* Mobile Menus */
-#sidr-main {  
+
+#sidr-main {
     display: block;
     position: fixed;
     top: 0;
@@ -607,17 +653,16 @@ header.sticky {
     overflow-x: hidden;
     overflow-y: auto;
     font-size: 1em;
-    background: hsl(180, 2%, 11%) none repeat scroll 0 0; 
-    color: hsl(0, 0%, 40%); 
+    background: #1b1d1d none repeat scroll 0 0;
+    color: #666;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    -webkit-overflow-scrolling: touch
+    -webkit-overflow-scrolling: touch;
 }
-
 .sidr.right { 
     left: auto; 
     right: -300px; 
@@ -635,7 +680,7 @@ header.sticky {
 .sidr-class-dropdown-menu li a:hover,
 .sidr-class-menu-item-has-children.active > a,
 .main-navigation .dropdown-menu > li > a:hover { 
-    color: #0078ac;
+    color: #f0780f;
     text-decoration: none; 
 }
 
@@ -645,7 +690,7 @@ header.sticky {
 
 .sidr-class-dropdown-menu li a:hover .sidr-class-dropdown-toggle,
 .sidr-class-menu-item-has-children.active > a > .sidr-class-dropdown-toggle {
-    color: #0078ac;
+    color: #0FBEF0;
 }
 
 .sidr-class-close-sidr-menu {
@@ -662,7 +707,7 @@ a.sidr-class-toggle-sidr-close {
     display: block; 
     height: 50px; 
     line-height: 50px; 
-    font-size: 18px; 
+    font-size: 1.125em; 
     color: #fff; 
     background: rgba(0,0,0,0.1);
 }
@@ -721,7 +766,7 @@ a.sidr-class-toggle-sidr-close {
 }
 
 .sidr-class-dropdown-toggle { 
-    font-size: 11px; 
+    font-size: 0.688em; 
     height: 100%; 
     width: 60px; 
     position: absolute; 
@@ -800,13 +845,13 @@ a.sidr-class-toggle-sidr-close {
 
 .slider-title p {
     color: #fff;
-    font-size: 16px;
+    font-size: 1em;
 }
 
 
 .slider-title h2 {
     color: #fff;
-    font-size: 60px;
+    font-size: 3.750em;
     font-weight: 700;
     margin-bottom: 20px;
     margin-top: 10px;
@@ -829,7 +874,7 @@ a.sidr-class-toggle-sidr-close {
 
 .slider-active .owl-nav button {
     background: #008CBA;
-    font-size: 20px;
+    font-size: 1.250em;
     height: 40px;
     line-height: 40px;
     position: absolute;
@@ -932,7 +977,7 @@ ul.filters li {
 
 li.filter a {
     position: relative;
-    font-size: 14px;
+    font-size: 0.875em;
     text-transform: uppercase;
     color: #444;
     letter-spacing: 2px;
@@ -1014,7 +1059,7 @@ li.filter.active a::before {
 
 .item-hover h6 {
     color: #fff;
-    font-size: 16px;
+    font-size: 1em;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -1022,7 +1067,7 @@ li.filter.active a::before {
 
 .item-hover a {
     color: #fff;
-    font-size: 12px;
+    font-size: 0.750em;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 5px;
